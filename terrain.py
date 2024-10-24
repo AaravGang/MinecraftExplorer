@@ -27,19 +27,19 @@ class Terrain:
         self.map = [[Tile(row, col, None) for col in range(self.cols)]
                     for row in range(self.rows)]
 
-        self.ground_level = self.rows//2  # 8 tiles from bottom
+        self.ground_level = self.rows//24  # 8 tiles from bottom
 
         # store self.cols number of blocks representing the surface of the terrain
-        self.surface_tiles = [None for c in range(self.cols)]
+        self.surface_tiles = [float("inf") for c in range(self.cols)]
 
         self.alt_scale = 25
-        self.alt_seed = random.randint(0, 1000)
+        self.alt_seed = 131  # random.randint(0, 1000)
 
         self.moisture_scale = 50
-        self.moisture_seed = random.randint(5000, 10000)
+        self.moisture_seed = 8316  # random.randint(5000, 10000)
 
-        self.cave_scale = 25
-        self.cave_seed = random.randint(0, 10000)
+        self.cave_scale = 50
+        self.cave_seed = 45  # random.randint(0, 100)
 
         print(self.alt_seed, self.moisture_seed, self.cave_seed)
 
@@ -57,6 +57,12 @@ class Terrain:
             for col in range(self.cols):
                 self.map[row][col].draw(
                     self.surf, col*self.tile_size, row*self.tile_size)
+
+        # for col, s in enumerate(self.surface_tiles):
+        #     y = (s-self.offset.y)*self.tile_size
+        #     x = (col)*self.tile_size
+        #     pygame.draw.rect(self.surf, (255, 255, 255),
+        #                      (x, y, self.tile_size, self.tile_size), 3)
 
         surf.blit(self.surf, (0, 0))
 
@@ -83,12 +89,14 @@ class Terrain:
             # making the terrain
             for row in range(self.rows):
                 tile = self.map[row][col]
+
                 type = self.get_biome(row, col, height_map)
                 tile.set_type(type)
 
-                
+            for row in range(self.rows):
+                tile = self.map[row][col]
+                tile.set_type(self.get_cave(row, col, height_map))
 
-      
     # define biome type based on temp and moisture
 
     def get_biome(self, row, col, height_map):
@@ -96,6 +104,9 @@ class Terrain:
         type = "empty"
 
         if self.rows-(row+self.offset.y) < self.ground_level - height_map:
+            if row+self.offset.y < self.surface_tiles[col]:
+                self.surface_tiles[col] = row+self.offset.y
+
             # set temp as inv. prop. to alt
             temp = (self.rows-self.ground_level +
                     height_map)/self.rows
@@ -107,19 +118,41 @@ class Terrain:
                                          persistence=self.persistence,
                                          lacunarity=self.lacunarity,
                                          base=self.moisture_seed))
-            if temp <= 0.5:
-                type = "snow_dirt"
 
-            elif 0.8 >= temp >= 0.5 and moisture >= 0.07:
+            # decide biome
+            if temp <= 0.5 and (row+self.offset.y) <= self.surface_tiles[col]+3:
+                type = "snow"
+
+            elif temp >= 0.5 and moisture >= 0.1 and row+self.offset.y <= self.surface_tiles[col]+10:
                 type = "marsh"
 
             elif temp >= 0.8 and moisture <= 0.05:
                 type = "sand"
 
             else:
-                type = "dirt"
+                if (row+self.offset.y) == self.surface_tiles[col]:
+                    type = "grass_dirt"
+                else:
+                    type = "dirt"
 
-            
+        return type
+
+    def get_cave(self, row, col, height_map):
+        type = self.map[row][col].type
+        if self.rows-(row+self.offset.y) < self.ground_level - height_map - 8:
+
+            cave_map = abs(noise.pnoise2((self.offset.x+col)/self.cave_scale,
+                                         (self.offset.y+row) / self.cave_scale,
+                                         octaves=self.octaves,
+                                         persistence=self.persistence,
+                                         lacunarity=self.lacunarity,
+                                         base=self.cave_seed))*2
+
+            if cave_map >= 0.15:
+                type = "gravel"
+
+            if self.rows-(row+self.offset.y) >= self.ground_level - height_map - 15:
+                type = "gravel"
 
         return type
 
@@ -177,33 +210,35 @@ class Terrain:
         if dir > 0:
             remove = 0
             add = self.cols-1
+
         else:
             remove = self.cols-1
             add = 0
 
+        self.surface_tiles.pop(remove)
+        self.surface_tiles.insert(add, float("inf"))
+
         # remove first col
         for row in range(self.rows):
             tile = self.map[row].pop(remove)
-
-            if dir > 0:
-                self.map[row].append(tile)
-            else:
-                self.map[row].insert(0, tile)
+            self.map[row].insert(add, tile)
 
         # generate terrain for last col
         # 1D: range = (-1,1)
         height_map = int(noise.pnoise1((self.offset.x+add)/self.alt_scale,
-                                   octaves=self.octaves,
-                                   persistence=self.persistence,
-                                   lacunarity=self.lacunarity,
-                                   base=self.alt_seed)*self.rows)
+                                       octaves=self.octaves,
+                                       persistence=self.persistence,
+                                       lacunarity=self.lacunarity,
+                                       base=self.alt_seed)*self.rows)
 
         for row in range(self.rows):
 
             tile = self.map[row][add]
             tile.set_type(self.get_biome(row, add, height_map))
 
-       
+        for row in range(self.rows):
+            tile = self.map[row][add]
+            tile.set_type(self.get_cave(row, add, height_map))
 
     def vertical_scroll(self, dir):
 
@@ -226,12 +261,24 @@ class Terrain:
             # generate terrain for last col
             # 1D: range = (-1,1)
             height_map = int(noise.pnoise1((self.offset.x+col)/self.alt_scale,
-                                       octaves=self.octaves,
-                                       persistence=self.persistence,
-                                       lacunarity=self.lacunarity,
-                                       base=self.alt_seed)*self.rows)
+                                           octaves=self.octaves,
+                                           persistence=self.persistence,
+                                           lacunarity=self.lacunarity,
+                                           base=self.alt_seed)*self.rows)
 
             tile = self.map[add][col]
             tile.set_type(self.get_biome(add, col, height_map))
 
-            
+        # remove first col
+        for col in range(self.cols):
+
+            # generate terrain for last col
+            # 1D: range = (-1,1)
+            height_map = int(noise.pnoise1((self.offset.x+col)/self.alt_scale,
+                                           octaves=self.octaves,
+                                           persistence=self.persistence,
+                                           lacunarity=self.lacunarity,
+                                           base=self.alt_seed)*self.rows)
+
+            tile = self.map[add][col]
+            tile.set_type(self.get_cave(add, col, height_map))
