@@ -4,18 +4,25 @@ import os
 from constants import *
 pygame.display.init()
 
-WIN = pygame.display.set_mode((WIDTH, HEIGHT))
+WIN = pygame.display.set_mode((WIDTH, HEIGHT), pygame.SRCALPHA)
 
 
 def load_tiles():
     for type in TILE_LOOKUP:
         path = os.path.join("assets", "sprites", f"{type}.png")
         try:
-            img = pygame.transform.scale(pygame.image.load(
-                path), (TILE_SIZE, TILE_SIZE)).convert_alpha()
-            TILE_LOOKUP[type]["sprite"] = img
-        except:
-            TILE_LOOKUP[type]["sprite"] = None
+            if type == "empty":
+                continue
+            if type.startswith("bg_"):
+                img = pygame.transform.scale(pygame.image.load(
+                    path), (TILE_SIZE, TILE_SIZE)).convert_alpha()
+                TILE_LOOKUP[type[3:]]["bg_sprites"].append(img)
+            else:
+                img = pygame.transform.scale(pygame.image.load(
+                    path), (TILE_SIZE, TILE_SIZE)).convert_alpha()
+                TILE_LOOKUP[type]["sprites"].append(img)
+        except Exception as e:
+            print(e)
 
 
 def draw(terrain: Terrain):
@@ -27,7 +34,10 @@ def main():
     run = True
 
     load_tiles()
+    print(TILE_LOOKUP)
     terrain = Terrain(ROWS, COLS, TILE_SIZE)
+    # terrain.view_noise()
+
     terrain.generate()
 
     while run:
@@ -42,8 +52,10 @@ def main():
             elif event.type == pygame.KEYUP:
                 terrain.on_event(event)
 
-        terrain.update()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                terrain.on_event(event)
         draw(terrain)
+        terrain.update()
 
 
 if __name__ == "__main__":
