@@ -137,7 +137,6 @@ class Terrain:
                 self.speed.y = 0
 
     def update(self):
-        # print(self.offset)
 
         self.topleft += self.speed
         self.change += self.speed

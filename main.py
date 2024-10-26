@@ -1,4 +1,6 @@
 from terrain import Terrain
+from inventory import Inventory
+
 import pygame
 import os
 from constants import *
@@ -25,8 +27,10 @@ def load_tiles():
             print(e)
 
 
-def draw(terrain: Terrain):
+def draw(terrain: Terrain, inventory: Inventory):
+
     terrain.draw(WIN)
+    inventory.draw(WIN)
     pygame.display.update()
 
 
@@ -34,9 +38,11 @@ def main():
     run = True
 
     load_tiles()
-    print(TILE_LOOKUP)
-    terrain = Terrain(ROWS, COLS, TILE_SIZE)
+
     # terrain.view_noise()
+    inventory = Inventory(9, 10, 2*TILE_SIZE,
+                          2 * TILE_SIZE, TILE_SIZE)
+    terrain = Terrain(ROWS, COLS, TILE_SIZE, inventory)
 
     terrain.generate()
 
@@ -54,8 +60,11 @@ def main():
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 terrain.on_event(event)
-        draw(terrain)
+                inventory.on_event(event)
+
+        draw(terrain, inventory)
         terrain.update()
+        inventory.update()
 
 
 if __name__ == "__main__":
