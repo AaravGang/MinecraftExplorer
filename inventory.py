@@ -9,6 +9,8 @@ class Inventory:
         self.x, self.y, self.tile_size = x, y, tile_size*2
         self.width, self.height = self.size*self.tile_size, self.tile_size
 
+        self.rect = pygame.Rect(self.x, self.y, self.width, self.height)
+
         self.surf = pygame.Surface(
             (self.width, self.height), pygame.SRCALPHA)
 
@@ -64,7 +66,7 @@ class Inventory:
             pygame.draw.rect(self.surf, (204, 231, 130),
                              (i*self.tile_size, 0, self.tile_size, self.tile_size), 3)
 
-        surf.blit(self.surf, (self.x, self.y))
+        surf.blit(self.surf, self.rect)
 
     def pop(self):
         type = None
@@ -99,7 +101,7 @@ class Inventory:
         x, y = pygame.mouse.get_pos()
 
         if self.y <= y <= self.y+self.height:
-            col = (x-self.x)//self.tile_size
+            col = (x-self.rect.left)//self.tile_size
             if len(self.types) > col:
                 self.highlighted = self.types[col]
                 return self.highlighted

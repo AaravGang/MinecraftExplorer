@@ -1,0 +1,222 @@
+{
+  "bodyTypeName": "male",
+  "url": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/#?body=Body_color_light&head=Human_male_light&wound_ribs=none&wound_eye=none&prosthesis_hand=Hook_hand_hook&prosthesis_leg=Peg_leg_peg_leg&tail=none&ears=none&nose=Straight_nose_light&eyes=Eyes_blue&eyebrows=Thin_Eyebrows_ash&beard=Winter_Beard_ash&mustache=Walrus_Mustache_ash&hairextl=none&hairextr=none&hair=Bedhead_ash&fins=none&bandana=Skull_Bandana_charcoal&facial_eyes=none&necklace=Necklace_gold&neck=Capeclip_green&shoulders=Leather_brown&arms=none&bracers=Bracers_iron&wrists=Cuffs_tan&clothes=Longsleeve_laced_rose&cape=Tattered_charcoal&belt=Loose_Belt_walnut&sash_tie=Obi_Knot_navy&sash=none&legs=Pantaloons_bluegray&shoes=Rim_Boots_orange&shoes_plate=Boots_Metal_Plating_steel&socks=Tabi_Socks_yellow&weapon=Smash_pickaxe",
+  "spritesheets": "https://sanderfrenken.github.io/Universal-LPC-Spritesheet-Character-Generator/spritesheets/",
+  "version": 1,
+  "datetime": "10/26/2024, 6:56:10 PM",
+  "credits": "Authors: bluecarrot16, Benjamin K. Smith (BenCreating), Evert, Eliza Wyatt (ElizaWy), TheraHedwig, MuffinElZangano, Durrani, Johannes Sj?lund (wulax), Stephen Challener (Redshrike), Thane Brimhall (pennomi), Matthew Krohn (makrohn), JaidynReiman, ElizaWy, Manuel Riecke (MrBeast), Fabzy, Luke Mehl, Johannes Sjölund (wulax), Nila122, , Pierre Vigier (pvigier), Tuomo Untinen (reemax), and Inboxninja\n\n- body/bodies/male/light.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Evert, Eliza Wyatt (ElizaWy), TheraHedwig, MuffinElZangano, Durrani, Johannes Sj?lund (wulax), Stephen Challener (Redshrike). License(s): CC-BY-SA 3.0, GPL 3.0. see details at https://opengameart.org/content/lpc-character-bases; 'Thick' Male Revised Run/Climb by JaidynReiman (based on ElizaWy's LPC Revised)\n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n    - https://opengameart.org/content/lpc-male-jumping-animation-by-durrani\n    - https://opengameart.org/content/lpc-runcycle-and-diagonal-walkcycle\n    - https://opengameart.org/content/lpc-revised-character-basics\n\n- body/prosthesis/hook/male/mask/hook.png: by bluecarrot16. License(s): CC-BY-SA 3.0. \n    - https://opengameart.org/content/lpc-pirates\n\n- body/prosthesis/hook/male/hook.png: by bluecarrot16. License(s): CC-BY-SA 3.0. \n    - https://opengameart.org/content/lpc-pirates\n\n- body/prosthesis/peg_leg/male/mask/peg_leg.png: by bluecarrot16. License(s): CC-BY-SA 3.0. \n    - https://opengameart.org/content/lpc-pirates\n\n- body/prosthesis/peg_leg/male/peg_leg.png: by bluecarrot16. License(s): CC-BY-SA 3.0. \n    - https://opengameart.org/content/lpc-pirates\n\n- head/heads/human/male/light.png: by bluecarrot16, Benjamin K. Smith (BenCreating), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. original head by Redshrike; tweaks by BenCreating; modular version by bluecarrot16\n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n    - https://opengameart.org/content/lpc-character-bases\n\n- head/nose/straight/adult/light.png: by Thane Brimhall (pennomi), Matthew Krohn (makrohn). License(s): GPL 3.0, CC-BY-SA 3.0. \n    - https://opengameart.org/content/lpc-base-character-expressions\n\n- eyes/human/adult/blue.png: by JaidynReiman, Matthew Krohn (makrohn), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. original by Redshrike, mapped to all frames by Matthew Krohn & JaidynReiman\n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n\n- eyes/eyebrows/thin/adult/ash.png: by ElizaWy. License(s): OGA-BY 3.0. \n    - https://github.com/ElizaWy/LPC/tree/main/Characters/Hair\n    - https://opengameart.org/content/expanded-universal-lpc-spritesheet-idle-run-jump-lpc-revised-combat-and-assets\n\n- beards/beard/winter/male/ash.png: by bluecarrot16. License(s): CC0. \n    - https://opengameart.org/content/lpc-santa\n\n- beards/mustache/walrus/ash.png: by ElizaWy. License(s): OGA-BY 3.0. \n    - https://github.com/ElizaWy/LPC/tree/main/Characters/Hair\n    - https://opengameart.org/content/expanded-universal-lpc-spritesheet-idle-run-jump-lpc-revised-combat-and-assets\n\n- hair/bedhead/male/ash.png: by Manuel Riecke (MrBeast). License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/liberated-pixel-cup-lpc-base-assets-sprites-map-tiles\n\n- hat/pirate/bandana_skull/male/charcoal.png: by bluecarrot16, Fabzy. License(s): CC-BY-SA 3.0. \n    - https://opengameart.org/content/lpc-pirates\n\n- neck/capeclip/male/green.png: by bluecarrot16, JaidynReiman. License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-curly-hair-elven-ears-white-cape-with-blue-trim-and-more\n    - http://opengameart.org/content/lpc-clothing-updates\n\n- neck/necklace/female/gold.png: by bluecarrot16, Luke Mehl. License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/female-mage-clothing-set\n    - http://opengameart.org/content/lpc-clothing-updates\n\n- shoulders/leather/male/brown.png: by Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n\n- arms/bracers/male/iron.png: by Matthew Krohn (makrohn), Johannes Sjölund (wulax). License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n\n- wrists/cuffs/male/tan.png: by bluecarrot16. License(s): OGA-BY 3.0. \n    - https://opengameart.org/content/lpc-pirates\n\n- torso/clothes/longsleeve/laced/male/rose.png: by bluecarrot16, JaidynReiman, Johannes Sjölund (wulax). License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-medieval-fantasy-character-sprites\n    - https://opengameart.org/content/lpc-pirates\n\n- cape/tattered/female/charcoal.png: by Nila122, JaidynReiman. License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-curly-hair-elven-ears-white-cape-with-blue-trim-and-more\n    - https://opengameart.org/content/lpc-roman-armor\n\n- cape/tattered_behind/charcoal.png: by Nila122, JaidynReiman. License(s): OGA-BY 3.0, CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-curly-hair-elven-ears-white-cape-with-blue-trim-and-more\n    - https://opengameart.org/content/lpc-roman-armor\n\n- torso/waist/belt_loose/male/walnut.png: by bluecarrot16, Johannes Sjölund (wulax), Matthew Krohn (makrohn). License(s): CC-BY-SA 3.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-combat-armor-for-women\n    - https://opengameart.org/content/lpc-pirates\n\n- torso/waist/obi_knot/universal/male/navy.png: by JaidynReiman. License(s): OGA-BY 3.0+, CC-BY 3.0+, GPL 3.0. \n    - https://opengameart.org/content/lpc-relm-outfit-pieces-2-kimonos-2-sleeves-2-boots-tabi-socks\n\n- legs/pantaloons/male/bluegray.png: by Nila122, Johannes Sjölund (wulax), Stephen Challener (Redshrike). License(s): OGA-BY 3.0, CC-BY-SA 3.0,, GPL 2.0, GPL 3.0. \n    - https://opengameart.org/content/lpc-pirates\n    - https://opengameart.org/content/more-lpc-clothes-and-hair\n\n- feet/boots_rim/universal/male/orange.png: by JaidynReiman. License(s): OGA-BY 3.0+, CC-BY 3.0+, GPL 3.0. \n    - https://opengameart.org/content/lpc-relm-outfit-pieces-2-kimonos-2-sleeves-2-boots-tabi-socks\n\n- feet/boots_plating/universal/male/steel.png: by JaidynReiman. License(s): OGA-BY 3.0+, CC-BY 3.0+, GPL 3.0. \n    - https://opengameart.org/content/lpc-relm-outfit-pieces-2-kimonos-2-sleeves-2-boots-tabi-socks\n\n- feet/socks/tabi/universal/male/yellow.png: by JaidynReiman. License(s): OGA-BY 3.0+, CC-BY 3.0+, GPL 3.0. \n    - https://opengameart.org/content/lpc-relm-outfit-pieces-2-kimonos-2-sleeves-2-boots-tabi-socks\n\n- tools/smash/universal/male/pickaxe.png: by . License(s): . !MISSING LICENSE INFORMATION! PLEASE CORRECT MANUALY AND REPORT BACK VIA A GITHUB ISSUE\n\n- tools/smash/background/pickaxe.png: by bluecarrot16, Pierre Vigier (pvigier), Tuomo Untinen (reemax), Johannes Sjölund (wulax), and Inboxninja. License(s): CC-BY-SA 3.0. \n    - https://opengameart.org/content/lpc-hand-tools\n\n- tools/smash/foreground/pickaxe.png: by bluecarrot16, Pierre Vigier (pvigier), Tuomo Untinen (reemax), Johannes Sjölund (wulax), and Inboxninja. License(s): CC-BY-SA 3.0. \n    - https://opengameart.org/content/lpc-hand-tools",
+  "layers": [
+    {
+      "fileName": "cape/tattered_behind/charcoal.png",
+      "zPos": 5,
+      "parentName": "cape",
+      "name": "Tattered",
+      "variant": "charcoal"
+    },
+    {
+      "fileName": "tools/smash/background/pickaxe.png",
+      "zPos": 9,
+      "custom_animation": "slash_128",
+      "parentName": "weapon",
+      "name": "Smash",
+      "variant": "pickaxe"
+    },
+    {
+      "fileName": "body/bodies/male/light.png",
+      "zPos": 10,
+      "parentName": "body",
+      "name": "Body color",
+      "variant": "light"
+    },
+    {
+      "fileName": "feet/socks/tabi/universal/male/yellow.png",
+      "zPos": 14,
+      "parentName": "socks",
+      "name": "Tabi Socks",
+      "variant": "yellow"
+    },
+    {
+      "fileName": "feet/boots_rim/universal/male/orange.png",
+      "zPos": 15,
+      "parentName": "shoes",
+      "name": "Rim Boots",
+      "variant": "orange"
+    },
+    {
+      "fileName": "feet/boots_plating/universal/male/steel.png",
+      "zPos": 16,
+      "parentName": "shoes_plate",
+      "name": "Boots Metal Plating",
+      "variant": "steel"
+    },
+    {
+      "fileName": "legs/pantaloons/male/bluegray.png",
+      "zPos": 20,
+      "parentName": "legs",
+      "name": "Pantaloons",
+      "variant": "bluegray"
+    },
+    {
+      "fileName": "torso/clothes/longsleeve/laced/male/rose.png",
+      "zPos": 35,
+      "parentName": "clothes",
+      "name": "Longsleeve laced",
+      "variant": "rose"
+    },
+    {
+      "fileName": "shoulders/leather/male/brown.png",
+      "zPos": 60,
+      "parentName": "shoulders",
+      "name": "Leather",
+      "variant": "brown"
+    },
+    {
+      "fileName": "torso/waist/obi_knot/universal/male/navy.png",
+      "zPos": 66,
+      "parentName": "sash_tie",
+      "name": "Obi Knot",
+      "variant": "navy"
+    },
+    {
+      "fileName": "arms/bracers/male/iron.png",
+      "zPos": 70,
+      "parentName": "bracers",
+      "name": "Bracers",
+      "variant": "iron"
+    },
+    {
+      "fileName": "wrists/cuffs/male/tan.png",
+      "zPos": 70,
+      "parentName": "wrists",
+      "name": "Cuffs",
+      "variant": "tan"
+    },
+    {
+      "fileName": "torso/waist/belt_loose/male/walnut.png",
+      "zPos": 70,
+      "parentName": "belt",
+      "name": "Loose Belt",
+      "variant": "walnut"
+    },
+    {
+      "fileName": "neck/necklace/female/gold.png",
+      "zPos": 80,
+      "parentName": "necklace",
+      "name": "Necklace",
+      "variant": "gold"
+    },
+    {
+      "fileName": "cape/tattered/female/charcoal.png",
+      "zPos": 85,
+      "parentName": "cape",
+      "name": "Tattered",
+      "variant": "charcoal"
+    },
+    {
+      "fileName": "neck/capeclip/male/green.png",
+      "zPos": 90,
+      "parentName": "neck",
+      "name": "Capeclip",
+      "variant": "green"
+    },
+    {
+      "fileName": "body/prosthesis/hook/male/mask/hook.png",
+      "zPos": 100,
+      "parentName": "prosthesis_hand",
+      "name": "Hook hand",
+      "variant": "hook"
+    },
+    {
+      "fileName": "body/prosthesis/hook/male/hook.png",
+      "zPos": 100,
+      "parentName": "prosthesis_hand",
+      "name": "Hook hand",
+      "variant": "hook"
+    },
+    {
+      "fileName": "body/prosthesis/peg_leg/male/mask/peg_leg.png",
+      "zPos": 100,
+      "parentName": "prosthesis_leg",
+      "name": "Peg leg",
+      "variant": "peg_leg"
+    },
+    {
+      "fileName": "body/prosthesis/peg_leg/male/peg_leg.png",
+      "zPos": 100,
+      "parentName": "prosthesis_leg",
+      "name": "Peg leg",
+      "variant": "peg_leg"
+    },
+    {
+      "fileName": "head/heads/human/male/light.png",
+      "zPos": 100,
+      "parentName": "head",
+      "name": "Human male",
+      "variant": "light"
+    },
+    {
+      "fileName": "head/nose/straight/adult/light.png",
+      "zPos": 105,
+      "parentName": "nose",
+      "name": "Straight nose",
+      "variant": "light"
+    },
+    {
+      "fileName": "eyes/human/adult/blue.png",
+      "zPos": 105,
+      "parentName": "eyes",
+      "name": "Eyes",
+      "variant": "blue"
+    },
+    {
+      "fileName": "eyes/eyebrows/thin/adult/ash.png",
+      "zPos": 106,
+      "parentName": "eyebrows",
+      "name": "Thin Eyebrows",
+      "variant": "ash"
+    },
+    {
+      "fileName": "beards/beard/winter/male/ash.png",
+      "zPos": 110,
+      "parentName": "beard",
+      "name": "Winter Beard",
+      "variant": "ash"
+    },
+    {
+      "fileName": "beards/mustache/walrus/ash.png",
+      "zPos": 111,
+      "parentName": "mustache",
+      "name": "Walrus Mustache",
+      "variant": "ash"
+    },
+    {
+      "fileName": "hair/bedhead/male/ash.png",
+      "zPos": 120,
+      "parentName": "hair",
+      "name": "Bedhead",
+      "variant": "ash"
+    },
+    {
+      "fileName": "hat/pirate/bandana_skull/male/charcoal.png",
+      "zPos": 120,
+      "parentName": "bandana",
+      "name": "Skull Bandana",
+      "variant": "charcoal"
+    },
+    {
+      "fileName": "tools/smash/universal/male/pickaxe.png",
+      "zPos": 140,
+      "parentName": "weapon",
+      "name": "Smash",
+      "variant": "pickaxe"
+    },
+    {
+      "fileName": "tools/smash/foreground/pickaxe.png",
+      "zPos": 150,
+      "custom_animation": "slash_128",
+      "parentName": "weapon",
+      "name": "Smash",
+      "variant": "pickaxe"
+    }
+  ]
+}

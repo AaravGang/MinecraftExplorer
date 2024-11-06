@@ -1,5 +1,6 @@
 from terrain import Terrain
 from inventory import Inventory
+from player import Player
 
 import pygame
 import os
@@ -7,6 +8,8 @@ from constants import *
 pygame.display.init()
 
 WIN = pygame.display.set_mode((WIDTH, HEIGHT), pygame.SRCALPHA)
+clock = pygame.time.Clock()
+FPS = 30
 
 
 def load_tiles():
@@ -27,10 +30,11 @@ def load_tiles():
             print(e)
 
 
-def draw(terrain: Terrain, inventory: Inventory):
+def draw(terrain: Terrain, inventory: Inventory, player: Player):
 
     terrain.draw(WIN)
     inventory.draw(WIN)
+    player.draw(WIN)
     pygame.display.update()
 
 
@@ -42,28 +46,34 @@ def main():
     # terrain.view_noise()
     inventory = Inventory(9, 10, 2*TILE_SIZE,
                           2 * TILE_SIZE, TILE_SIZE)
-    terrain = Terrain(ROWS, COLS, TILE_SIZE, inventory)
+    px, py = (WIDTH+TILE_SIZE*2)//2-15, (HEIGHT+TILE_SIZE*2)//2-25
+    player = Player(px, py)
+    terrain = Terrain(ROWS, COLS, TILE_SIZE, inventory, px, py)
 
     terrain.generate()
 
     while run:
+        clock.tick(FPS)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
                 break
 
-            elif event.type == pygame.KEYDOWN:
+            if event.type == pygame.KEYDOWN:
                 terrain.on_event(event)
+                player.on_event(event)
 
-            elif event.type == pygame.KEYUP:
+            if event.type == pygame.KEYUP:
                 terrain.on_event(event)
+                player.on_event(event)
 
             if event.type == pygame.MOUSEBUTTONDOWN:
                 terrain.on_event(event)
                 inventory.on_event(event)
 
-        draw(terrain, inventory)
-        terrain.update()
+        player.update(terrain)
+        draw(terrain, inventory, player)
+        terrain.update(player.vel)
         inventory.update()
 
 
