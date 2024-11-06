@@ -10,5 +10,7 @@ python3 main.py
 ### To Play
 
 > Arrows keys to move
+
 > Left click to destroy block
+
 > Right click to place block
